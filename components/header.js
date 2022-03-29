@@ -19,7 +19,6 @@ import Icon from '@components/icon'
 const Header = ({ data = {}, isTransparent, onSetup = () => {} }) => {
   // expand our header data
   const {
-    promo,
     menuDesktopLeft,
     menuDesktopRight,
     menuMobilePrimary,
@@ -64,7 +63,7 @@ const Header = ({ data = {}, isTransparent, onSetup = () => {} }) => {
         Skip to Content
       </a>
 
-      <PromoBar data={promo} />
+      {/* <PromoBar data={promo} /> */}
 
       <header
         className={cx('header', {
