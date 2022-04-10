@@ -5,6 +5,7 @@ import cx from 'classnames'
 import { getStaticRoute, getDynamicRoute } from '@lib/routes'
 
 const Link = ({ link, children, ...rest }) => {
+    console.log(rest)
   const isLink = !!link.url
   const isStatic = getStaticRoute(link.page?.type)
 

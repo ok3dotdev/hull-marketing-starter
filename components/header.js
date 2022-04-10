@@ -73,7 +73,7 @@ const Header = ({ data = {}, isTransparent, onSetup = () => {} }) => {
         })}
       >
         <div ref={headerRef} className="header--outer">
-          <div className="header--inner">
+          <div className="header--inner xl:container mx-auto">
             <div className="header--content">
               <div className="logo">
                 {router.pathname === '/' ? (
@@ -158,7 +158,7 @@ const Header = ({ data = {}, isTransparent, onSetup = () => {} }) => {
 
                 {/* Desktop Header Menu */}
                 <div className="main-navigation--desktop">
-                  <div className="menu-left">
+                  {/* <div className="menu-left">
                     {menuDesktopLeft?.items && (
                       <Menu
                         items={menuDesktopLeft.items}
@@ -166,7 +166,7 @@ const Header = ({ data = {}, isTransparent, onSetup = () => {} }) => {
                         useMegaNav
                       />
                     )}
-                  </div>
+                  </div> */}
 
                   <div className="menu-right">
                     {menuDesktopRight?.items && (

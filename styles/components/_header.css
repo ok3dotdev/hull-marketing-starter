@@ -14,7 +14,7 @@ a[href="#content"].skip-link {
   }
 
   &--outer {
-    @apply relative;
+    @apply relative bg-pageBG;
   }
   
   &--inner {
@@ -34,7 +34,7 @@ a[href="#content"].skip-link {
   }
   
   &--content {
-    @apply flex flex-col items-center relative z-30;
+    @apply flex items-center justify-between relative z-30;
   }
 
   &--border {
@@ -55,7 +55,7 @@ a[href="#content"].skip-link {
 }
 
 .logo {
-  @apply flex flex-col relative z-10;
+  @apply flex flex-col relative;
 
   &--link {
     @apply clean-btn block p-2 bg-transparent;
@@ -67,7 +67,7 @@ a[href="#content"].skip-link {
 }
 
 .menu-toggle {
-  @apply sm:hidden absolute inset-y-0 left-0 z-60 clean-btn p-4 bg-transparent;
+  @apply sm:hidden absolute inset-y-0 right-0 z-60 clean-btn p-4 bg-transparent;
 
   .is-overlay:not(.has-bg) & {
     @apply transition-colors duration-300;
@@ -156,7 +156,7 @@ a[href="#content"].skip-link {
 
 .main-navigation {
   &--desktop {
-    @apply hidden sm:flex justify-between items-center absolute inset-0;
+    @apply hidden sm:flex items-center inset-0;
 
     .menu-left,
     .menu-right {
