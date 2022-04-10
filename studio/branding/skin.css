@@ -61,7 +61,7 @@ li[class*="moving"] * {
   background: var(--theme-pageBG) !important;
   color: var(--theme-pageText) !important;
   border: 1px solid;
-  border-radius: 9999px;
+  border-radius: 4px;
   box-shadow: 0 0 0 5px var(--theme-pageBG);
   font-size: .75rem;
   line-height: 1rem;
