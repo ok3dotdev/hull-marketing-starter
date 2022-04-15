@@ -1,3 +1,5 @@
+/* eslint-disable */ 
+
 .accordion-group {
   &:not(:last-child) {
     @apply mb-12;

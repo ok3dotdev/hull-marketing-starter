@@ -73,6 +73,18 @@ export const blocks = `
         ${ptContent}
       }
     }
+  },
+  _type == 'cards' => {
+      _type,
+      _key,
+      items[]{
+          "id": _key,
+          title,
+          content[]{
+              ${ptContent}
+          }
+
+      }
   }
 `
 

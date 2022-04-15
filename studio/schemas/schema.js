@@ -57,6 +57,12 @@ import accordions from './objects/accordions'
 import accordion from './objects/accordion'
 import productCard from './objects/product-card'
 
+
+//Custom objects
+import card from "./objects/card"
+import cards from "./objects/Cards"
+
+
 import participant from './objects/participant'
 
 /*  ------------------------------------------ */
@@ -125,6 +131,8 @@ export default createSchema({
     accordions,
     accordion,
     productCard,
+    cards,
+    card,
 
     participant
   ])

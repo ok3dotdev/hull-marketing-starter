@@ -1,4 +1,5 @@
 import { getSanityClient } from '@lib/sanity'
+import { Console } from "console"
 import * as queries from './queries'
 
 // Fetch all dynamic docs
@@ -52,6 +53,7 @@ export async function getPage(slug, preview) {
     `
 
   const data = await getSanityClient(preview).fetch(query)
+  console.log(data)
 
   return data
 }

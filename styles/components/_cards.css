@@ -1,0 +1,7 @@
+.card-group {
+
+}
+
+.card{
+    @apply px-8 py-16 m-4 border
+}

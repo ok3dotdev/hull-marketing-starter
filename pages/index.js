@@ -7,7 +7,7 @@ import Layout from '@components/layout'
 import { Module } from '@components/modules'
 
 const Home = ({ data }) => {
-    // console.log(data)
+    // console.log(data.page.modules[1])
   const { site, page } = data
 
   if (!page) {

@@ -3,6 +3,7 @@ import cx from 'classnames'
 
 import Freeform from '@components/freeform'
 import AccordionList from '@components/accordion-list'
+import CardList from "@components/card-list"
 
 const Grid = ({ data = {} }) => {
   const { size, columns } = data
@@ -78,6 +79,8 @@ const GridBlock = ({ block }) => {
       return <Freeform data={block} />
     case 'accordions':
       return <AccordionList data={block} />
+    case 'cards':
+        return <CardList data={block}/>
     default:
       return null
   }
