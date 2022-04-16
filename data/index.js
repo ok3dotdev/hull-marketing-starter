@@ -53,7 +53,7 @@ export async function getPage(slug, preview) {
     `
 
   const data = await getSanityClient(preview).fetch(query)
-  console.log(data)
+//   console.log(data)
 
   return data
 }

@@ -3,5 +3,9 @@
 }
 
 .card{
-    @apply px-8 py-16 m-4 border
+    @apply px-8 py-16 sm:mx-2 my-4 border;
+
+    &:hover{
+        @apply shadow-9 -translate-y-4 ;
+    }
 }

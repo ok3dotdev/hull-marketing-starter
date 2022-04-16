@@ -153,6 +153,10 @@ export const modules = `
     photo{
       ${imageMeta}
     }
+  },
+  _type == 'newsletter' => {
+      _type,
+      _key,
   }
 `
 

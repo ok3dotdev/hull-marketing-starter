@@ -85,6 +85,9 @@ module.exports = {
         80: 80,
         90: 90,
       },
+      boxShadow: {
+          '9': '0px 15px 0px #000000',
+      }
     },
   },
   variants: {

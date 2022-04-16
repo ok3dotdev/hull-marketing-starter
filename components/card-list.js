@@ -11,7 +11,7 @@ const CardList = ({ data }) => {
   return (
     <div className="card-group grid sm:grid-cols-3">
       {items.map((card, key) => {
-          {console.log(card.content)}
+        //   {console.log(card.content)}
         return (
           <Card
             key={key}
