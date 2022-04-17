@@ -55,13 +55,17 @@ a[href="#content"].skip-link {
 }
 
 .logo {
-  @apply flex flex-col relative;
+  @apply flex flex-col relative z-30;
 
   &--link {
-    @apply clean-btn block p-2 bg-transparent;
+    @apply clean-btn block  bg-transparent;
 
     svg {
       @apply block fill-current w-auto h-12;
+      
+      &:hover {
+        @apply scale-125;
+      }
     }
   }
 }

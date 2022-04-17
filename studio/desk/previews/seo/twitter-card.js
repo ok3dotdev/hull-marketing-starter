@@ -13,10 +13,9 @@ const urlFor = source => {
 }
 
 const author = {
-  name: 'Nick DiMatteo',
-  handle: 'ndimatteo',
-  image:
-    'https://pbs.twimg.com/profile_images/1174691001119756288/TbJJ6_2I_400x400.jpg'
+  name: 'Henry Oke',
+  handle: 'okedotdev',
+  image: 'https://pbs.twimg.com/profile_images/1411253983948283905/BmcnCWZT_400x400.jpg'
 }
 
 class TwitterCard extends React.PureComponent {
