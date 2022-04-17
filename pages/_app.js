@@ -148,7 +148,7 @@ const MyApp = ({ Component, pageProps, router }) => {
   return (
     <ThemeProvider enableSystem={false} disableTransitionOnChange>
       <SiteContextProvider data={{ ...data?.site }}>
-        <GoogleAnalytics gtmID={data.site.gtmID}/>
+        <GoogleAnalytics gtmID={data?.site?.gtmID}/>
         <Site Component={Component} pageProps={pageProps} router={router} />
       </SiteContextProvider>
     </ThemeProvider>
