@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react'
 import Router from 'next/router'
 import Head from 'next/head'
+import Script from 'next/script'
 import { ThemeProvider } from 'next-themes'
 import { LazyMotion, domAnimation, AnimatePresence } from 'framer-motion'
+
+import * as gtag from '../lib/gtag'
 
 import '../styles/tailwind.css'
 import '../styles/app.css'
@@ -23,15 +26,36 @@ if (isBrowser) {
     'display:block;padding:0.125em 1em;font-family:courier;font-size:14px;font-weight:bold;line-height:2;text-transform:uppercase;background:black;color:white;'
   )
   console.log(
-    '%cDesign by Nick DiMatteo \n– https://nickdimatteo.com',
-    'display:block;font-family:courier;font-size:12px;font-weight:bold;line-height:1;color:black;'
-  )
-  console.log(
-    '%cDevelopment by Nick DiMatteo \n– https://nickdimatteo.com',
+    '%c Made by Kubez  \n– https://www.kubez.ca/',
     'display:block;font-family:courier;font-size:12px;font-weight:bold;line-height:1;color:black;'
   )
   console.groupEnd()
 }
+
+const GoogleAnalytics = ({gtmID=""})=>{
+    return(
+        <>
+        <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${gtmID}`}
+      />
+       <Script
+        id="gtag-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${gtmID}', {
+                page_path: window.location.pathname,
+            });
+            `,
+        }}
+        />
+    </>
+    )
+};
 
 const Site = ({ Component, pageProps, router }) => {
   const togglePageTransition = useTogglePageTransition()
@@ -67,6 +91,19 @@ const Site = ({ Component, pageProps, router }) => {
       togglePageTransition(false)
     })
   }, [])
+
+  //Handle Google Analytics
+
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      gtag.pageview(url)
+    }
+    router.events.on('routeChangeComplete', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
+
 
   // intelligently add focus states if keyboard is used
   const handleFirstTab = (event) => {
@@ -111,6 +148,7 @@ const MyApp = ({ Component, pageProps, router }) => {
   return (
     <ThemeProvider enableSystem={false} disableTransitionOnChange>
       <SiteContextProvider data={{ ...data?.site }}>
+        <GoogleAnalytics gtmID={data.site.gtmID}/>
         <Site Component={Component} pageProps={pageProps} router={router} />
       </SiteContextProvider>
     </ThemeProvider>

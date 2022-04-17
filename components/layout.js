@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Script from 'next/script'
 import { m } from 'framer-motion'
 
 import { isBrowser, useWindowSize } from '@lib/helpers'
@@ -49,27 +48,6 @@ const Layout = ({ site = {}, page = {}, schema, children }) => {
   return (
     <>
       <HeadSEO site={site} page={page} schema={schema} />
-          <>
-            <Script
-            strategy="afterInteractive"
-            src={`https://www.googletagmanager.com/gtag/js?id=${site.gtmID}`}
-          />
-           <Script
-            id="gtag-init"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-                __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${site.gtmID}', {
-                    page_path: window.location.pathname,
-                });
-                `,
-            }}
-            />
-        </>
-
       <m.div
         initial="initial"
         animate="enter"
