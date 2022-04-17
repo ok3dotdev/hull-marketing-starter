@@ -41,7 +41,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res, req }) => {
       props: {},
     }
   }
-  const smStream = new SitemapStream({ hostname: `https://${req.headers.host}/` })
+  const smStream = new SitemapStream({ hostname: 'https://kubez.ca/' })
   const pipeline = smStream.pipe(createGzip())
 
   try {
