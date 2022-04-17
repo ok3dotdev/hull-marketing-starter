@@ -44,7 +44,7 @@ const Footer = ({ data = {} }) => {
                 <ThemeSwitch />
 
                 <div className="footer--disclaimer">
-                  <p>&copy; {new Date().getFullYear()}. All Rights Reserved.</p>
+                  <p>&copy; Kubez Design Studio Inc. {new Date().getFullYear()}. All Rights Reserved.</p>
                 </div>
               </div>
             )}

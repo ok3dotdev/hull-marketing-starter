@@ -49,11 +49,11 @@ const Layout = ({ site = {}, page = {}, schema, children }) => {
   return (
     <>
       <HeadSEO site={site} page={page} schema={schema} />
-      {site.gtmID && (
+      (
           <>
             <Script
             strategy="afterInteractive"
-            src={`https://www.googletagmanager.com/gtag/js?id=${site.gtmID}`}
+            src={'https://www.googletagmanager.com/gtag/js?id=G-1Y9S3DXP7L'}
           />
            <Script
           id="gtag-init"
@@ -63,14 +63,14 @@ const Layout = ({ site = {}, page = {}, schema, children }) => {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', '${site.gtmID}', {
+              gtag('config', 'G-1Y9S3DXP7L', {
                 page_path: window.location.pathname,
               });
             `,
           }}
         />
         </>
-      )}
+      )
 
       <m.div
         initial="initial"
