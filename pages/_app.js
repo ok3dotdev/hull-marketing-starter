@@ -35,12 +35,14 @@ if (isBrowser) {
 const GoogleAnalytics = ({gtmID=""})=>{
     return(
         <>
+        {/* Global Site Tag (gtag.js) - Google Analytics */}
         <Script
-        strategy="afterInteractive"
+        strategy="beforeInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${gtmID}`}
+        
       />
        <Script
-        id="gtag-init"
+        id="gtag"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
             __html: `
